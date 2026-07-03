@@ -1,0 +1,11 @@
+def show_menu():
+    print("========================================")
+    print("        MENU - GERENCIAR PROJETOS       ")
+    print("========================================")
+    print("[1] Adicionar novo projeto")
+    print("[2] Listar todos os projetos")
+    print("[3] Buscar projeto por ID")
+    print("[4] Alterar status de projeto")
+    print("[5] Deletar projeto")
+    print("[0] Sair do sistema")
+    print("========================================")
