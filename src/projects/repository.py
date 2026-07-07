@@ -22,13 +22,27 @@ class ProjectRepository:
         logging.info("Tabela criada com sucesso!")
         
     def list_all(self):
+        
         connection = self.database.connection
         cursor = connection.cursor()
+
         cursor.execute("""
-            SELECT * FROM projects
+            SELECT id, name, description, status FROM projects
         """)
+
         rows = cursor.fetchall()
-        return rows
+
+        projects = []
+
+        for project in rows:
+            projects.append({
+                "id": project[0],
+                "name": project[1],
+                "description": project[2],
+                "status": project[3]
+            })
+
+        return projects
 
     def find_project_by_id(self, project_id):
         connection = self.database.connection

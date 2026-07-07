@@ -15,7 +15,7 @@ class Database:
         database_path = data_path / "wrench.db"
         print(database_path)
         logging.info("Conectando o banco de dados SQLite")
-        self.connection = sqlite3.connect(database_path)
+        self.connection = sqlite3.connect(database_path, check_same_thread=False)
         logging.info("Banco conectado com sucesso.")
         return self.connection
     
